@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>455</width>
+    <height>315</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Serial Ports</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog
+{
+background-color: #CECFC9;
+}
+
+
+#centralwidget {
+    background-color: #CECFC9;
+}
+
+QMainWindow {
+	color:#0A3143;
+    background-color: #276E90; /* Define el color de fondo de la ventana principal */
+    border: 2px solid #EFEFEF; /* Define el borde de la ventana principal */
+    border-radius: 10px; /* Redondea los bordes de la ventana principal */
+}
+
+
+QMenuBar {
+	color:#0A3143;
+    background-color: #276E90;
+    border: 1px solid #EFEFEF;
+}
+
+QMenu
+{
+background-color: #276E90;
+color:#EFEFEF;
+font-style:bold;
+}
+
+QGroupBox{
+	color:#0A3143;
+ 	border: 2px solid #276E90; /* Define el borde de la ventana principal */
+	border-radius: 10px; /* Redondea los bordes de la ventana principal */
+}
+
+QPushButton
+{
+color:#0A3143;
+background-color: #276E90;
+border: 1px solid #EFEFEF;
+border-width: 2px;
+border-radius: 10px;
+height:25px;
+}
+
+QPushButton:hover { background-color: #EFEFEF; }
+
+QLabel
+{
+color:#0A3143;
+background-color: #EFEFEF;
+border-radius: 10px;
+padding: 2px;
+}
+
+QTextEdit {
+ border: 2px solid #EFEFEF;
+ border-radius: 10px;
+ background-color: rgba(0,0,0,0);
+ }
+
+QLineEdit{
+	color:#0A3143;
+	background-color: #EFEFEF;
+	border: 1px solid #EFEFEF;
+	border-width: 2px;
+	border-radius: 8px;
+}
+
+QPlainTextEdit{
+	color:#0A3143;
+	background-color: #EFEFEF;
+	border: 1px solid #EFEFEF;
+	border-width: 2px;
+	border-radius: 8px;
+}
+
+QTextEdit#textEdit_RAW{
+	font-family: &quot;Verdana&quot;;
+	font-size: 14px ;
+	font-style: bold;
+	padding:5px;
+   color:#0A3143;
+}
+
+QTextEdit#textEdit_PROCCES{
+    font-family: &quot;Verdana&quot;;
+	font-size: 14px ;
+	font-style: bold;
+	padding:5px;
+   color:#0A3143;
+}
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #EFEFEF; /* Define el borde superior del marco del widget */
+    position: absolute; /* Posiciona el marco de manera absoluta en su contenedor */
+    top: -0.5em; /* Desplaza el marco hacia arriba en medio de una unidad em */
+}
+
+QTabWidget::tab-bar {
+    alignment: center; /* Centra las pestañas en la barra de pestañas */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background-color: #276E90; /* Define un gradiente lineal para el fondo de la pestaña */
+    border: 1px solid #EFEFEF; /* Define el borde de la pestaña */
+    border-bottom-color: #EFEFEF; /* Define el color del borde inferior de la pestaña */
+    border-top-left-radius: 3px; /* Redondea el borde superior izquierdo de la pestaña */
+    border-top-right-radius: 3px; /* Redondea el borde superior derecho de la pestaña */
+	border-bottom-left-radius: 3px; /* Redondea el borde superior izquierdo de la pestaña */
+    border-bottom-right-radius: 3px; /* Redondea el borde superior derecho de la pestaña */
+    min-width: 8ex; /* Define el ancho mínimo de la pestaña */
+    padding: 2px; /* Define el relleno dentro de la pestaña */
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: #EFEFEF; /* Define un gradiente lineal para el fondo de la pestaña */ /* Define un gradiente lineal para el fondo de la pestaña cuando está seleccionada o se pasa el cursor sobre ella */
+}
+
+QTabBar::tab:selected {
+    border-color: #EFEFEF; /* Define el color del borde de la pestaña cuando está seleccionada */
+    border-bottom-color: #276E90; /* Define el color del borde inferior de la pestaña cuando está seleccionada */
+}
+
+QComboBox {
+	color:#0A3143;
+	background-color: #276E90;
+    border: 1px solid #EFEFEF;
+	border-width: 2px;
+	border-radius: 10px;
+	height:25px;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     border-color: #EFEFEF; 
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1); /* Define un gradiente lineal para el fondo del QComboBox cuando el menú desplegable está abierto */
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px; /* Aumenta el relleno superior cuando el menú desplegable está abierto */
+    padding-left: 4px; /* Aumenta el relleno izquierdo cuando el menú desplegable está abierto */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding; /* Define el origen del subcontrol en el relleno */
+    subcontrol-position: top right; /* Posiciona el subcontrol en la parte superior derecha */
+    width: 15px; /* Define el ancho del subcontrol */
+
+    border-left-width: 1px; /* Define el ancho del borde izquierdo del subcontrol */
+    border-left-color: #276E90; /* Define el color del borde izquierdo del subcontrol */
+    border-left-style: solid; /* Define el estilo del borde izquierdo del subcontrol */
+    border-top-right-radius: 3px; /* Redondea el borde superior derecho del subcontrol */
+    border-bottom-right-radius: 3px; /* Redondea el borde inferior derecho del subcontrol */
+}
+
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px; /* Desplaza la flecha hacia abajo hacia abajo cuando el menú desplegable está abierto */
+    left: 1px; /* Desplaza la flecha hacia abajo hacia la izquierda cuando el menú desplegable está abierto */
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid #276E90;
+    selection-background-color: lightgray;
+	border-radius: 5px;
+}
+
+QDoubleSpinBox {
+    color:#0A3143;
+	background-color: #EFEFEF;
+}
+
+QSpinBox {
+    color:#0A3143;
+	background-color: #EFEFEF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QGroupBox" name="selectBox">
+       <property name="font">
+        <font>
+         <family>Courier 10 Pitch</family>
+        </font>
+       </property>
+       <property name="title">
+        <string>Select Serial Port</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>13</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <widget class="QComboBox" name="serialPortInfoListBox"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="descriptionLabel">
+          <property name="text">
+           <string>Description:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="manufacturerLabel">
+          <property name="text">
+           <string>Manufacturer:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="serialNumberLabel">
+          <property name="text">
+           <string>Serial number:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="locationLabel">
+          <property name="text">
+           <string>Location:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="vidLabel">
+          <property name="text">
+           <string>Vendor ID:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="pidLabel">
+          <property name="text">
+           <string>Product ID:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="parametersBox">
+       <property name="font">
+        <font>
+         <family>Courier 10 Pitch</family>
+        </font>
+       </property>
+       <property name="title">
+        <string>Select Parameters</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>5</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="baudRateLabel">
+              <property name="text">
+               <string>BaudRate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="baudRateBox"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="dataBitsLabel">
+              <property name="text">
+               <string>Data bits:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="dataBitsBox"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="parityLabel">
+              <property name="text">
+               <string>Parity:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="parityBox"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="stopBitsLabel">
+              <property name="text">
+               <string>Stop bits:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="stopBitsBox"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="flowControlLabel">
+              <property name="text">
+               <string>Flow control:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="flowControlBox"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButtonRefresh">
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>70</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="applyButton">
+       <property name="text">
+        <string>Apply</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>arc-reactor-png.png</file>
+        <file>arrowdown.png</file>
+    </qresource>
+</RCC>
